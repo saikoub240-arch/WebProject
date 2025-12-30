@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<div class="social-icons" style="margin-left: auto; display: flex; gap: 12px;">
+    <a href="https://facebook.com/saikou.bojang.583" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com/don_billiscober" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com/Saikou Bojang" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://tiktok.com/@Saikou Bojang" target="_blank"><i class="fab fa-tiktok"></i></a>
+   </div>
+
+<title>Gallery – Kobisala Properties</title>
+<link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+font-family: Arial, sans-serif;
+background: #111;
+color: white;
+}
+/* Header */
+.gallery-header {
+text-align: center;
+padding: 50px 20px;
+background: black;
+color: gold;
+}
+/* Grid */
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+padding: 40px;
+}
+.gallery-grid img {
+width: 100%;
+height: 230px;
+object-fit: cover;
+border-radius: 10px;
+border: 2px solid gold;
+transition: 0.3s ease;
+cursor: pointer;
+}
+.gallery-grid img:hover {
+transform: scale(1.05);
+box-shadow: 0 0 15px gold;
+}
+/* Lightbox Background */
+.lightbox {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.9);
+justify-content: center;
+align-items: center;
+z-index: 9999;
+}
+/* Lightbox Content */
+.lightbox-content {
+max-width: 90%;
+max-height: 80%;
+}
+.lightbox-content img {
+width: 100%;
+border-radius: 10px;
+}
+/* Buttons */
+.close-btn,
+.prev-btn,
+.next-btn {
+position: absolute;
+color: gold;
+font-size: 40px;
+cursor: pointer;
+font-weight: bold;
+transition: 0.3s;
+}
+.close-btn:hover,
+.prev-btn:hover,
+.next-btn:hover {
+color: white;
+}
+.close-btn {
+top: 20px;
+right: 40px;
+}
+.prev-btn {
+left: 40px;
+top: 50%;
+transform: translateY(-50%);
+}
+.next-btn {
+right: 40px;
+top: 50%;
+transform: translateY(-50%);
+}
+</style>
+</head>
+<body>
+<header class="site-header container">
+  <a href="index.html" class="logo">Kobisala Properties</a>
+ <nav class="nav">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="properties.html">Properties</a>
+    <a href="plots.html">Plots</a>
+    <a href="insights.html">Insights</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" class="cta">Contact Us</a>
+  </nav>
+ </header>
+<!-- Gallery Title -->
+<section class="gallery-header">
+<h1>Property Gallery</h1>
+<p>Explore our luxury estates, interior designs, and land opportunities.</p>
+</section>
+<!-- Professional Gallery Grid -->
+<section class="gallery-grid">
+<img src="images/forsale1.jpg.jpeg" alt="House 1">
+<img src="images/soldh1.jpg.jpeg" alt="House 2">
+<img src="images/mansion1.jpg.jpeg" alt="Villa">
+<img src="images/soldh2.jpg.jpeg" alt="Estate">
+<img src="images/laborer1.jpg.jpeg" alt="Sold out">
+<img src="images/soldh3.jpg.jpeg" alt="Interior 2">
+<img src="images/plot1.jpg.jpeg" alt="Land 1">
+<img src="images/plot2.jpg.jpeg" alt="Land 2">
+</section>
+<!-- Lightbox Viewer -->
+<div class="lightbox" id="lightbox">
+<span class="close-btn" onclick="closeLightbox()">&times;</span>
+<span class="prev-btn" onclick="prevImage()">&#10094;</span>
+<div class="lightbox-content">
+<img id="lightbox-img" src="">
+</div>
+<span class="next-btn" onclick="nextImage()">&#10095;</span>
+</div>
+<!-- Lightbox Script -->
+<script>
+const images = document.querySelectorAll('.gallery-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+let currentIndex = 0;
+images.forEach((img, index) => {
+img.addEventListener('click', () => {
+currentIndex = index;
+openLightbox(img.src);
+});
+});
+function openLightbox(src) {
+lightbox.style.display = 'flex';
+lightboxImg.src = src;
+}
+function closeLightbox() {
+lightbox.style.display = 'none';
+}
+function prevImage() {
+currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+lightboxImg.src = images[currentIndex].src;
+}
+function nextImage() {
+currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+lightboxImg.src = images[currentIndex].src;
+}
+</script>
+</body>
+</html>

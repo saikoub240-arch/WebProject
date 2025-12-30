@@ -1,0 +1,61 @@
+<!doctype html>
+ <html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<div class="social-icons" style="margin-left: auto; display: flex; gap: 12px;">
+    <a href="https://facebook.com/saikou.bojang.583" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com/don_billiscober" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com/Saikou Bojang" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://tiktok.com/@Saikou Bojang" target="_blank"><i class="fab fa-tiktok"></i></a>
+   </div>
+
+ <title>Kobisala Properties — Home</title>
+ <link rel="stylesheet" href="styles.css">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+ </head>
+ <body>
+ <header class="site-header container" role="banner">
+  <a href="index.html" class="logo">Kobisala Properties</a>
+ <nav class="nav">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="properties.html">Properties</a>
+    <a href="plots.html">Plots</a>
+    <a href="insights.html">Insights</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" class="cta">Contact Us</a>
+ </nav>
+ </header>
+ <main class="container">
+  <h1>Welcome to Kobisala Properties</h1>
+  <p>Discover luxury properties and premium land plots designed for modern lifestyles.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="media" style="background-image:url('images/mansion1.jpg.jpeg');"></div>
+      <div class="body">
+        <h3 class="title">Premium Homes</h3>
+        <p class="location">Exclusive residences across Gambia</p>
+        <a href="properties.html" class="cta">View Properties</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="media" style="background-image:url('images/plot3.jpg.jpeg');"></div>
+      <div class="body">
+        <h3 class="title">Land Plots</h3>
+        <p class="location">Build your dream property</p>
+        <a href="plots.html" class="cta">View Plots</a>
+      </div>
+    </div>
+  </div>
+ </main>
+ <footer class="site-footer container">
+  <p>© <span id="year"></span> Kobisala Properties</p>
+ </footer>
+ <script src="script.js"></script>
+ <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+ </body>
+ </html>
